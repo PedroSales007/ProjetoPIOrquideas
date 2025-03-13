@@ -39,7 +39,7 @@ from cadastro;
 create table orquideas (
 id int primary key auto_increment,
 especie varchar(20) not null unique,
-luxMinimo int not null
+luxMinimo int not null,
 luxMaximo int not null
 );
 desc orquideas;
