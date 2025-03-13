@@ -39,17 +39,18 @@ from cadastro;
 create table orquideas (
 id int primary key auto_increment,
 especie varchar(20) not null unique,
-luxMedio int not null
+luxMinimo int not null
+luxMaximo int not null
 );
 desc orquideas;
-insert into orquideas (especie, luxMedio) values
-('Phalaenopsis', 10000),
-('Cattleya', '20000'),
-('Vanda', '40000');
+insert into orquideas (especie, luxMinimo, luxMaximo) values
+('Phalaenopsis', 1000, 2000),
+('Cattleya', 2000, 4000),
+('Vanda', 5000, 10000);
 select 
 	id as ID,
     especie as Espécie,
-    luxMedio as 'Lux Base'
+    concat(luxMinimo, ' até ', luxMaximo) as Lux
 from orquideas;
 
 -- tabela onde aconteceram os inserts
